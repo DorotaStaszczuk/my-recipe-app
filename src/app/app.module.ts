@@ -7,6 +7,7 @@ import { RecipeTileComponent } from './recipe-tile/recipe-tile.component';
 import { RecipeDetailsComponent } from './recipe-details/recipe-details.component';
 import { RecipeFormComponent } from './recipe-form/recipe-form.component';
 import { MainComponent } from './main/main.component';
+import { RecipeRateComponent } from './recipe-rate/recipe-rate.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { MainComponent } from './main/main.component';
     RecipeTileComponent,
     RecipeDetailsComponent,
     RecipeFormComponent,
-    MainComponent
+    MainComponent,
+    RecipeRateComponent
   ],
   imports: [
     BrowserModule
