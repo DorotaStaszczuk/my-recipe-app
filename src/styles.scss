@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ecede8;
+  font-family: "Ubuntu", sans-serif;
+  color: #253528;
+
+  button {
+    background-color: #c0cfb2;
+    text-transform: uppercase;
+    color: #49654e;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    border: none;
+    margin: 10px 0;
+    cursor: pointer;
+
+    &:disabled {
+      background-color: lightgrey;
+      color: white;
+      cursor: default;
+    }
+  }
+}
