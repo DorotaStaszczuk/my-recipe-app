@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
+import { ReplaySubject } from 'rxjs';
+import { Recipe } from './recipe-list/recipe-list.component';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class RecipeService {
-
-  constructor() { }
+  public selectedRecipe = new ReplaySubject<Recipe>(1);
+  constructor() {}
 }
