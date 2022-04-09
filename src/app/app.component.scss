@@ -1,0 +1,19 @@
+header {
+  background-color: #c0cfb2;
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+  color: #49654e;
+
+  h1 {
+    font-family: "Sigmar One", cursive;
+    font-size: 45px;
+  }
+
+  .logout {
+    position: absolute;
+    right: 30px;
+    top: 15px;
+    cursor: pointer;
+  }
+}
