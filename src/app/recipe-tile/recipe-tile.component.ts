@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Recipe } from '../recipe-list/recipe-list.component';
+import { RecipeService } from '../recipe.service';
 
 @Component({
   selector: 'app-recipe-tile',
   templateUrl: './recipe-tile.component.html',
-  styleUrls: ['./recipe-tile.component.scss']
+  styleUrls: ['./recipe-tile.component.scss'],
 })
-export class RecipeTileComponent implements OnInit {
+export class RecipeTileComponent {
+  @Input() public recipe!: Recipe;
+  constructor(private recipeService: RecipeService) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  selectRecipe() {
+    this.recipeService.selectedRecipe.next(this.recipe);
   }
-
 }
