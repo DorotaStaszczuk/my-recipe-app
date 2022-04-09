@@ -8,6 +8,10 @@ import { RecipeDetailsComponent } from './recipe-details/recipe-details.componen
 import { RecipeFormComponent } from './recipe-form/recipe-form.component';
 import { MainComponent } from './main/main.component';
 import { RecipeRateComponent } from './recipe-rate/recipe-rate.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RatingPipe } from './rating.pipe';
+import { UppercasePipe } from './uppercase.pipe';
 
 @NgModule({
   declarations: [
@@ -17,12 +21,12 @@ import { RecipeRateComponent } from './recipe-rate/recipe-rate.component';
     RecipeDetailsComponent,
     RecipeFormComponent,
     MainComponent,
-    RecipeRateComponent
+    RecipeRateComponent,
+    RatingPipe,
+    UppercasePipe,
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule, HttpClientModule, FormsModule, ReactiveFormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
