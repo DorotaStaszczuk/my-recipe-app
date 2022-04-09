@@ -1,15 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { ModalVisibilityService } from '../modal-visibility.service';
+
+export type ToggleType = 'form' | 'details';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss']
+  styleUrls: ['./main.component.scss'],
 })
-export class MainComponent implements OnInit {
+export class MainComponent {
+  toggle: ToggleType = 'form';
+  isVisible$ = this.modalVisibilityService.isVisible$;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  get showRecipeForm() {
+    return this.toggle === 'form';
   }
 
+  get showRecipeDetails() {
+    return this.toggle === 'details';
+  }
+
+  togglePanel(type: ToggleType) {
+    this.toggle = type;
+  }
+  constructor(private modalVisibilityService: ModalVisibilityService) {}
 }
