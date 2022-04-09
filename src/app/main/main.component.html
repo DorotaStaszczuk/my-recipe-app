@@ -1,1 +1,12 @@
-<p>main works!</p>
+<div>
+  <app-recipe-list></app-recipe-list>
+</div>
+<div>
+  <nav>
+    <button class="panel left" type="button" (click)="togglePanel('form')">Dodaj przepis</button>
+    <button class="panel" type="button" (click)="togglePanel('details')">Szczegóły</button>
+  </nav>
+  <app-recipe-form *ngIf="showRecipeForm"></app-recipe-form>
+  <app-recipe-details *ngIf="showRecipeDetails"></app-recipe-details>
+</div>
+  <app-recipe-rate *ngIf="isVisible$ | async" ></app-recipe-rate>
