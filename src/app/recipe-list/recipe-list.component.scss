@@ -1,0 +1,28 @@
+:host {
+  width: 45vw;
+  background-color: #e4e6d9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 70vh;
+
+  header {
+    padding: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+
+    select {
+      min-width: 180px;
+      margin-left: 25px;
+    }
+  }
+
+  .recipe-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+}
