@@ -1,1 +1,29 @@
-<p>recipe-details works!</p>
+<ng-container *ngIf="recipe; else norecipe">
+
+  <div class="details-element-container">
+    <p class="recipe-name">{{ recipe.name | uppercase}}</p>
+    <p>{{ recipe.rating | rating }}</p>
+  </div>
+
+  <div class="details-element-container">
+  <div class="directions-container">
+    <p>Instrukcja przygotowania:</p>
+    <div *ngFor="let description of recipe.description, let i=index" >
+      <p>{{ i + 1 }}. {{ description }}.</p>
+    </div>
+  </div>
+
+  <div class="ingredients-container">
+    <p>Lista składników:</p>
+    <div *ngFor="let ingredient of ingredients, let i = index">
+      {{ i + 1 }}. {{ ingredient.name }} - {{ ingredient.value }}
+    </div>
+  </div>
+</div>
+</ng-container>
+
+<ng-template #norecipe>
+  <p >
+    Kliknij na przepis aby wyświetlić szczegóły
+  </p>
+</ng-template>
