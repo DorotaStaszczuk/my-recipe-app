@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { ModalVisibilityService } from '../modal-visibility.service';
 
 @Component({
   selector: 'app-recipe-rate',
   templateUrl: './recipe-rate.component.html',
-  styleUrls: ['./recipe-rate.component.scss']
+  styleUrls: ['./recipe-rate.component.scss'],
 })
-export class RecipeRateComponent implements OnInit {
+export class RecipeRateComponent {
+  constructor(private modalVisibilityService: ModalVisibilityService) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  closeModal() {
+    this.modalVisibilityService.isVisible$.next(false);
   }
-
 }
