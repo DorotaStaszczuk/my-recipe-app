@@ -1,1 +1,26 @@
-<p>recipe-form works!</p>
+<form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+
+  <input formControlName="recipeName" type="text" class="recipe-name-input" placeholder="Nazwa przepisu">
+  <div *ngIf="recipeName && recipeName.touched && recipeName.errors?.['minlength']">
+    Za krótka nazwa
+  </div>
+  <div *ngIf="recipeName && recipeName.touched && recipeName.errors?.['required']">
+    Pole obowiązkowe
+  </div>
+
+  <textarea formControlName="recipeDescription" class="recipe-description-textarea" placeholder="Jak przyrządzić?"></textarea>
+
+  <div formArrayName="ingredients"  class="ingredient-container">
+    <div *ngFor="let ingredient of ingredientsArrayControls; let i = index">
+      <ng-container [formGroup]="ingredient">
+        <input formControlName="ingredientName" type="text" placeholder="Składnik">
+        <input formControlName="ingredientAmount" type="text" placeholder="Ile?">
+      </ng-container>
+    </div>
+    <button (click)="addIngredient()">Następny składnik</button>
+  </div>
+
+  <button type="submit"  (click)="openModal()" [disabled]="!recipeForm.valid">Dodaj</button>
+
+</form>
+
