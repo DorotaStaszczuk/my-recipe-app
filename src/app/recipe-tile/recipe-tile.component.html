@@ -1,4 +1,4 @@
-<div class="tile-content" (click)="selectRecipe()">
+<div routerLink="details/{{recipe.id}}" class="tile-content" (click)="selectRecipe()">
   <h4>{{ recipe.name | uppercase }}</h4>
   <p>{{ recipe.rating | rating }}</p>
 </div>
