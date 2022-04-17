@@ -3,10 +3,9 @@
 </div>
 <div>
   <nav>
-    <button class="panel left" type="button" (click)="togglePanel('form')">Dodaj przepis</button>
-    <button class="panel" type="button" (click)="togglePanel('details')">Szczegóły</button>
+    <button routerLink="form" routerLinkActive="active" class="panel left" type="button" (click)="togglePanel('form')">Dodaj przepis</button>
+    <button routerLink="details" routerLinkActive="active" class="panel" type="button" (click)="togglePanel('details')">Szczegóły</button>
   </nav>
-  <app-recipe-form *ngIf="showRecipeForm"></app-recipe-form>
-  <app-recipe-details *ngIf="showRecipeDetails"></app-recipe-details>
+  <router-outlet></router-outlet>
 </div>
   <app-recipe-rate *ngIf="isVisible$ | async" ></app-recipe-rate>
